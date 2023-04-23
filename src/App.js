@@ -1,5 +1,6 @@
 import ErrorExample from "./components/ErrorExample";
 import { useState } from "react";
+import People from "./components/People";
 
 function App() {
   const [title, setTitle] = useState("I love React");
@@ -18,6 +19,7 @@ function App() {
           {title}
         </h1>
         <ErrorExample />
+        <People />
       </header>
     </div>
   );
