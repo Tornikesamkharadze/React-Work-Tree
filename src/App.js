@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import data from "./Data/data";
 import List from "./components/List";
+import WorkTree from "./workTree/WorkTree";
 
 function App() {
   const [people, setPeople] = useState(data);
@@ -27,6 +28,7 @@ function App() {
           {people.length > 0 ? "Clear All" : "See Birthdays"}
         </button>
       </section>
+    {/*   <WorkTree /> */}
     </main>
   );
 }
