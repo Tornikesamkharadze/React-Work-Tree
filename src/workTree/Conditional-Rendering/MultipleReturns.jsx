@@ -7,6 +7,15 @@ const MultipleReturns = () => {
   const [isLoading, setIsloading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [isUser, setIsUser] = useState("Cant find User");
+  const [ticktock, setTickTock] = useState(1);
+
+  useEffect(() => {
+    if (ticktock > 60) setTickTock(1);
+    const intervalId = setInterval(() => {
+      setTickTock((prevState) => (prevState += 1));
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, [ticktock]);
 
   useEffect(() => {
     try {
@@ -36,7 +45,13 @@ const MultipleReturns = () => {
     );
   }
 
-  return <div>{isUser.login}</div>;
+  return (
+    <div>
+      {isUser.login}
+      <br />
+      {ticktock}
+    </div>
+  );
 };
 
 export default MultipleReturns;
