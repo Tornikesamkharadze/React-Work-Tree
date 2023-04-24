@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Tour = ({ id, image, info, name, price, filterTour }) => {
+  const [readMore, setReadMore] = useState(false);
+  const clickHandler = () => setReadMore(!readMore);
   return (
     <article className="single-tour">
       <img src={image} alt={name} />
       <footer>
         <div className="tour-info">
-          <h4>{info}</h4>
+          <h4>{name}</h4>
           <h4 className="tour-price">${price}</h4>
         </div>
         <p>
-          <button></button>
+          {readMore ? info : `${info.substring(0, 250)} ...`}
+          <button onClick={clickHandler}>
+            {readMore ? "show less" : "Read More"}
+          </button>
         </p>
         <button className="delete-btn" onClick={() => filterTour(id)}>
           not interested
