@@ -7,6 +7,12 @@ import "./index.css";
 const MainMenu = () => {
   const [menuItems, setMenuItems] = useState(items);
   const [categories, setCategories] = useState([]);
+
+  const filterItems = (category) => {
+    const newItem = items.filter((item) => item.category === category);
+    setMenuItems(newItem);
+  };
+
   return (
     <main>
       <section className="menu section">
@@ -14,7 +20,7 @@ const MainMenu = () => {
           <h2>our menu</h2>
           <div className="underline" />
         </div>
-        <Categories />
+        <Categories filterItems={filterItems} />
         <Menu items={menuItems} />
       </section>
     </main>
