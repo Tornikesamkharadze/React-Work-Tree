@@ -6,6 +6,7 @@ import MultipleReturns from "./workTree/Conditional-Rendering/MultipleReturns";
 import MainTours from "./Projects/Tours/MainTours";
 import MainReview from "./Projects/Reviews/MainReview";
 import MainAccording from "./Projects/According/MainAccording";
+import MainMenu from "./Projects/Menu/MainMenu";
 function App() {
   return (
     <>
@@ -14,7 +15,8 @@ function App() {
       {/* <MultipleReturns /> */}
       {/* <MainTours /> */}
       {/*  <MainReview /> */}
-      <MainAccording />
+      {/*  <MainAccording /> */}
+      <MainMenu />
     </>
   );
 }
