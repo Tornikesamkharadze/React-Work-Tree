@@ -7,6 +7,7 @@ import MainTours from "./Projects/Tours/MainTours";
 import MainReview from "./Projects/Reviews/MainReview";
 import MainAccording from "./Projects/According/MainAccording";
 import MainMenu from "./Projects/Menu/MainMenu";
+import MainTabs from "./Projects/Tabs/MainTabs";
 function App() {
   return (
     <>
@@ -16,7 +17,8 @@ function App() {
       {/* <MainTours /> */}
       {/*  <MainReview /> */}
       {/*  <MainAccording /> */}
-      <MainMenu />
+      {/* <MainMenu /> */}
+      <MainTabs />
     </>
   );
 }
