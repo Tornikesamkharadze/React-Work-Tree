@@ -8,6 +8,7 @@ import MainReview from "./Projects/Reviews/MainReview";
 import MainAccording from "./Projects/According/MainAccording";
 import MainMenu from "./Projects/Menu/MainMenu";
 import MainTabs from "./Projects/Tabs/MainTabs";
+import MainSlider from "./Projects/Slider/MainSlider";
 function App() {
   return (
     <>
@@ -18,7 +19,8 @@ function App() {
       {/*  <MainReview /> */}
       {/*  <MainAccording /> */}
       {/* <MainMenu /> */}
-      <MainTabs />
+      {/* <MainTabs /> */}
+      <MainSlider />
     </>
   );
 }
