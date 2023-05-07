@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import { FaAngleDoubleRight } from "react-icons/fa";
+import "./index.css"
 const url = "https://course-api.com/react-tabs-project";
 const MainTabs = () => {
   const [loading, setLoading] = useState(true);
@@ -16,7 +17,7 @@ const MainTabs = () => {
   useEffect(() => {
     fetchJobs();
   }, []);
-  console.log(jobs);
+
   if (loading) {
     return (
       <section className="section loading">
@@ -24,8 +25,30 @@ const MainTabs = () => {
       </section>
     );
   }
-
-  return <div>MainTabs</div>;
+  const { company, dates, duties, title } = jobs[value];
+  return (
+    <section className="section">
+    <div className="title">
+      <h2>experience</h2>
+      <div className="underline"></div>
+    </div>
+    <div className="jobs-center">
+      <article className="job-info">
+        <h3>{title}</h3>
+        <h4>{company}</h4>
+        <p className="job-date">{dates}</p>
+        {duties.map((duty, index) => {
+          return (
+            <div key={index} className="job-desc">
+              <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
+              <p>{duty}</p>
+            </div>
+          );
+        })}
+      </article>
+    </div>
+  </section>
+  );
 };
 
 export default MainTabs;
