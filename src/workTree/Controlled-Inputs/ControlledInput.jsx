@@ -4,9 +4,18 @@ import "./index.css";
 const ControlledInput = () => {
   const [firstName, setFirstName] = useState("");
   const [email, setEmali] = useState("");
+  const [people, setPeople] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (firstName && email) {
+      const user = { id: Date.now(), firstName, email };
+      setPeople((people) => {
+        return [...people, user];
+      });
+      setFirstName("");
+      setEmali("");
+    }
   };
 
   return (
@@ -35,6 +44,15 @@ const ControlledInput = () => {
           </div>
           <button type="submit">add person</button>
         </form>
+        {people.map((person) => {
+          const { id, firstName, email } = person;
+          return (
+            <div className="item" key={id}>
+              <h4>{firstName}</h4>
+              <p>{email}</p>
+            </div>
+          );
+        })}
       </article>
     </>
   );
