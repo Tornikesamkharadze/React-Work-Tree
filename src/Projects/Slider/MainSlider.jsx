@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -7,6 +7,23 @@ import data from "./data";
 const MainSlider = () => {
   const [people, setPleople] = useState(data);
   const [index, setIndex] = useState(0);
+
+  const nextSlide = () => setIndex(index + 1);
+  const prevSlide = () => setIndex(index - 1);
+
+  useEffect(() => {
+    const lastIndex = people.length - 1;
+    if (index > lastIndex) setIndex(0);
+    if (index < 0) setIndex(lastIndex);
+  }, [index]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIndex(index - 1);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [index]);
   return (
     <section className="section">
       <div className="title">
@@ -35,10 +52,10 @@ const MainSlider = () => {
             </article>
           );
         })}
-        <button className="prev">
+        <button onClick={nextSlide} className="prev">
           <FiChevronLeft />
         </button>
-        <button className="next">
+        <button onClick={prevSlide} className="next">
           <FiChevronRight />
         </button>
       </div>
