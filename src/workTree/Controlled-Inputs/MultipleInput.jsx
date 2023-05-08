@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
+import { getSessionStorage } from "../../Utils/getsessionStorage";
 
 const initialValues = { firstName: "", email: "", age: "" };
 
 const MultipleInput = () => {
   const [person, setPerson] = useState(initialValues);
-  const [people, setPeople] = useState([]);
+  const [people, setPeople] = useState(getSessionStorage("User", []));
   const { firstName, email, age } = person;
 
   const handleChange = (e) => {
@@ -21,6 +22,9 @@ const MultipleInput = () => {
       setPerson(initialValues);
     }
   };
+  useEffect(() => {
+    sessionStorage.setItem("User", JSON.stringify(people));
+  }, [people]);
 
   return (
     <>
