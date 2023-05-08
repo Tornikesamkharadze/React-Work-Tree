@@ -10,6 +10,7 @@ import MainMenu from "./Projects/Menu/MainMenu";
 import MainTabs from "./Projects/Tabs/MainTabs";
 import MainSlider from "./Projects/Slider/MainSlider";
 import ControlledInput from "./workTree/Controlled-Inputs/ControlledInput";
+import MultipleInput from "./workTree/Controlled-Inputs/MultipleInput";
 function App() {
   return (
     <>
@@ -22,7 +23,8 @@ function App() {
       {/* <MainMenu /> */}
       {/* <MainTabs /> */}
       {/* <MainSlider /> */}
-      <ControlledInput />
+      {/*  <ControlledInput /> */}
+      <MultipleInput />
     </>
   );
 }
