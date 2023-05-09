@@ -12,6 +12,7 @@ import MainSlider from "./Projects/Slider/MainSlider";
 import ControlledInput from "./workTree/Controlled-Inputs/ControlledInput";
 import MultipleInput from "./workTree/Controlled-Inputs/MultipleInput";
 import MainLorem from "./Projects/Lorem-Ipsum/MainLorem";
+import MainColorGenerator from "./Projects/ColorGenerator/MainColorGenerator";
 function App() {
   return (
     <>
@@ -26,7 +27,8 @@ function App() {
       {/* <MainSlider /> */}
       {/*  <ControlledInput /> */}
       {/* <MultipleInput /> */}
-      <MainLorem />
+      {/*  <MainLorem /> */}
+      <MainColorGenerator />
     </>
   );
 }
