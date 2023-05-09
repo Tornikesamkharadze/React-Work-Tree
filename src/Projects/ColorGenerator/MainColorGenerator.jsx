@@ -7,7 +7,7 @@ import "./index.css";
 const MainColorGenerator = () => {
   const [color, setColor] = useState("");
   const [error, setError] = useState(false);
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(new Values("#f15025").all(10));
 
   const handleChange = (e) => setColor(e.target.value);
 
