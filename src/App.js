@@ -11,6 +11,7 @@ import MainTabs from "./Projects/Tabs/MainTabs";
 import MainSlider from "./Projects/Slider/MainSlider";
 import ControlledInput from "./workTree/Controlled-Inputs/ControlledInput";
 import MultipleInput from "./workTree/Controlled-Inputs/MultipleInput";
+import MainLorem from "./Projects/Lorem-Ipsum/MainLorem";
 function App() {
   return (
     <>
@@ -24,7 +25,8 @@ function App() {
       {/* <MainTabs /> */}
       {/* <MainSlider /> */}
       {/*  <ControlledInput /> */}
-      <MultipleInput />
+      {/* <MultipleInput /> */}
+      <MainLorem />
     </>
   );
 }
