@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import text from "./data";
+import data from "./data";
 import "./index.css";
 
 const MainLorem = () => {
@@ -8,7 +8,10 @@ const MainLorem = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("shemovida");
+    let amount = parseInt(count);
+    if (amount <= 0) amount = 1;
+    if (amount > 8) amount = 8;
+    setText(data.slice(0, amount));
   };
 
   return (
@@ -28,8 +31,9 @@ const MainLorem = () => {
         </button>
       </form>
       <article className="lorem-text">
-        <p>lorem</p>
-        <p>lorem</p>
+        {text.map((item, index) => {
+          return <p key={index}>{item}</p>;
+        })}
       </article>
     </section>
   );
