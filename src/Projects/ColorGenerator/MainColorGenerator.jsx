@@ -7,7 +7,7 @@ import "./index.css";
 const MainColorGenerator = () => {
   const [color, setColor] = useState("");
   const [error, setError] = useState(false);
-  const [list, setList] = useState();
+  const [list, setList] = useState([]);
 
   const handleChange = (e) => setColor(e.target.value);
 
@@ -15,6 +15,7 @@ const MainColorGenerator = () => {
     e.preventDefault();
     try {
       const colors = new Values(color).all(10);
+      setList(colors);
       setError(false);
     } catch (error) {
       setError(true);
@@ -40,7 +41,9 @@ const MainColorGenerator = () => {
         </form>
       </section>
       <section className="colors">
-        <h4>list goes here</h4>
+        {list.map((color, index) => {
+          return <SingleColor key={index} {...color} index={index} />;
+        })}
       </section>
     </>
   );
