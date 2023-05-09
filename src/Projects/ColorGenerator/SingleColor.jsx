@@ -5,9 +5,10 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
   const [alert, setAlert] = useState(false);
   const bcg = rgb.join(",");
   /*   const hex = rgbToHex(...rgb); */
+  const hexValue = `#${hexColor}`;
   const handleCopyCleapboard = () => {
     setAlert(true);
-    navigator.clipboard.writeText(hexColor);
+    navigator.clipboard.writeText(hexValue);
   };
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
       onClick={handleCopyCleapboard}
     >
       <p className="percent-value">{weight}%</p>
-      <p className="color-value">#{hexColor}</p>
+      <p className="color-value">{hexValue}</p>
       {alert && <p className={`alert`}>copied to clipboard</p>}
     </article>
   );
