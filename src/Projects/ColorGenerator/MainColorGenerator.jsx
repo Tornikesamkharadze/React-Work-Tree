@@ -13,6 +13,13 @@ const MainColorGenerator = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    try {
+      const colors = new Values(color).all(10);
+      setError(false);
+    } catch (error) {
+      setError(true);
+      console.log(error);
+    }
   };
 
   return (
@@ -25,6 +32,7 @@ const MainColorGenerator = () => {
             value={color}
             onChange={handleChange}
             placeholder="#f15025"
+            className={`${error ? "error" : null}`}
           />
           <button className="btn" type="submit">
             submit
