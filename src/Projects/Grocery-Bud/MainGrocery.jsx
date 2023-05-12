@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import List from "./List";
 import Alert from "./Alert";
+import { getSessionStorage } from "../../Utils/getsessionStorage";
 import "./index.css";
 
 const MainGrocery = () => {
   const [name, setName] = useState("");
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getSessionStorage("list", []));
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
   const [alert, setAlert] = useState({
@@ -59,6 +60,10 @@ const MainGrocery = () => {
     setEditID(id);
     setName(specificItem.title);
   };
+
+  useEffect(() => {
+    sessionStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
 
   return (
     <section className="section-center">
