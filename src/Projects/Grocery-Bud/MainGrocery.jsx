@@ -12,7 +12,15 @@ const MainGrocery = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("shemovedi");
+    if (!name) {
+      console.log(!name);
+    } else if (name && isEditing) {
+      console.log("შევსებული >>", name);
+    } else {
+      const newItem = { id: Date.now(), title: name };
+      setList([...list, newItem]);
+      setName("");
+    }
   };
 
   return (
@@ -33,10 +41,12 @@ const MainGrocery = () => {
           </button>
         </div>
       </form>
-      <div className="grocery-container">
-        <List />
-        <button className="clear-btn">clear items</button>
-      </div>
+      {list.length > 0 && (
+        <div className="grocery-container">
+          <List list={list} />
+          <button className="clear-btn">clear items</button>
+        </div>
+      )}
     </section>
   );
 };
