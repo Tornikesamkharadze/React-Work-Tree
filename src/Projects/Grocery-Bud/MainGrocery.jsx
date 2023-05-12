@@ -37,6 +37,11 @@ const MainGrocery = () => {
     setList([]);
   };
 
+  const removeItem = (id) => {
+    showAlert(true, "item removed", "danger");
+    setList(list.filter((item) => item.id !== id));
+  };
+
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
@@ -57,7 +62,7 @@ const MainGrocery = () => {
       </form>
       {list.length > 0 && (
         <div className="grocery-container">
-          <List list={list} />
+          <List list={list} removeItem={removeItem} />
           <button className="clear-btn" onClick={clearList}>
             clear items
           </button>
