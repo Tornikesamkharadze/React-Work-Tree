@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import List from "./List";
 import Alert from "./Alert";
 import "./index.css";
@@ -8,12 +8,16 @@ const MainGrocery = () => {
   const [list, setList] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
-  const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
+  const [alert, setAlert] = useState({
+    show: false,
+    msg: "",
+    type: "",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
-      console.log(!name);
+      showAlert(true, "please enter value", "danger");
     } else if (name && isEditing) {
       console.log("შევსებული >>", name);
     } else {
@@ -23,10 +27,13 @@ const MainGrocery = () => {
     }
   };
 
+  const showAlert = (show = false, msg = "", type = "") => {
+    setAlert({ show, msg, type });
+  };
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
-        {alert.show && <Alert />}
+        {alert.show && <Alert {...alert} showAlert={showAlert} />}
         <h3>grocery bud</h3>
         <div className="form-control">
           <input
