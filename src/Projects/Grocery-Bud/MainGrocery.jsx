@@ -19,7 +19,18 @@ const MainGrocery = () => {
     if (!name) {
       showAlert(true, "please enter value", "danger");
     } else if (name && isEditing) {
-      console.log("შევსებული >>", name);
+      setList(
+        list.map((item) => {
+          if (item.id === editID) {
+            return { ...item, title: name };
+          }
+          return item;
+        })
+      );
+      setName("");
+      setIsEditing(false);
+      setEditID(null);
+      showAlert(true, "value changed", "success");
     } else {
       showAlert(true, "item added to the list", "success");
       const newItem = { id: Date.now(), title: name };
@@ -42,6 +53,13 @@ const MainGrocery = () => {
     setList(list.filter((item) => item.id !== id));
   };
 
+  const editItem = (id) => {
+    const specificItem = list.find((item) => item.id === id);
+    setIsEditing(true);
+    setEditID(id);
+    setName(specificItem.title);
+  };
+
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
@@ -62,7 +80,7 @@ const MainGrocery = () => {
       </form>
       {list.length > 0 && (
         <div className="grocery-container">
-          <List list={list} removeItem={removeItem} />
+          <List list={list} removeItem={removeItem} editItem={editItem} />
           <button className="clear-btn" onClick={clearList}>
             clear items
           </button>
