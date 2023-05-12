@@ -13,6 +13,7 @@ import ControlledInput from "./workTree/Controlled-Inputs/ControlledInput";
 import MultipleInput from "./workTree/Controlled-Inputs/MultipleInput";
 import MainLorem from "./Projects/Lorem-Ipsum/MainLorem";
 import MainColorGenerator from "./Projects/ColorGenerator/MainColorGenerator";
+import MainGrocery from "./Projects/Grocery-Bud/MainGrocery";
 function App() {
   return (
     <>
@@ -28,7 +29,8 @@ function App() {
       {/*  <ControlledInput /> */}
       {/* <MultipleInput /> */}
       {/*  <MainLorem /> */}
-      <MainColorGenerator />
+      {/* <MainColorGenerator /> */}
+      <MainGrocery />
     </>
   );
 }
