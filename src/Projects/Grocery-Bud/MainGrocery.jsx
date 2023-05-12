@@ -21,6 +21,7 @@ const MainGrocery = () => {
     } else if (name && isEditing) {
       console.log("შევსებული >>", name);
     } else {
+      showAlert(true, "item added to the list", "success");
       const newItem = { id: Date.now(), title: name };
       setList([...list, newItem]);
       setName("");
@@ -30,10 +31,16 @@ const MainGrocery = () => {
   const showAlert = (show = false, msg = "", type = "") => {
     setAlert({ show, msg, type });
   };
+
+  const clearList = () => {
+    showAlert(true, "empty list", "danger");
+    setList([]);
+  };
+
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
-        {alert.show && <Alert {...alert} showAlert={showAlert} />}
+        {alert.show && <Alert {...alert} showAlert={showAlert} list={list} />}
         <h3>grocery bud</h3>
         <div className="form-control">
           <input
@@ -51,7 +58,9 @@ const MainGrocery = () => {
       {list.length > 0 && (
         <div className="grocery-container">
           <List list={list} />
-          <button className="clear-btn">clear items</button>
+          <button className="clear-btn" onClick={clearList}>
+            clear items
+          </button>
         </div>
       )}
     </section>
