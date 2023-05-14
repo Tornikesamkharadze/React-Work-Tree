@@ -1,9 +1,26 @@
-import React from 'react'
+import React from "react";
+import { useRef } from "react";
 
 const MainUseRef = () => {
-  return (
-    <div>MainUseRef</div>
-  )
-}
+  const refContainer = useRef(null);
+  const divContainer = useRef(null);
 
-export default MainUseRef
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(refContainer.current);
+    console.log(divContainer.current.textContent);
+  };
+
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+        <input type="text" ref={refContainer} />
+        <button type="submit">submit</button>
+      </form>
+      <div ref={divContainer}>Hello World</div>
+    </>
+  );
+};
+
+export default MainUseRef;
