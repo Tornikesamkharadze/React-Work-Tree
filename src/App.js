@@ -15,6 +15,7 @@ import MainLorem from "./Projects/Lorem-Ipsum/MainLorem";
 import MainColorGenerator from "./Projects/ColorGenerator/MainColorGenerator";
 import MainGrocery from "./Projects/Grocery-Bud/MainGrocery";
 import MainUseRef from "./workTree/UseRef/MainUseRef";
+import MainNavbar from "./Projects/Navbar/MainNavbar";
 function App() {
   return (
     <>
@@ -32,7 +33,8 @@ function App() {
       {/*  <MainLorem /> */}
       {/* <MainColorGenerator /> */}
       {/*  <MainGrocery /> */}
-      <MainUseRef />
+      {/* <MainUseRef /> */}
+      <MainNavbar />
     </>
   );
 }
