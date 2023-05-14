@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import "./index.css";
 
 const MainNavbar = () => {
-  return (
-    <div>MainNavbar</div>
-  )
-}
+  return <div>MainNavbar</div>;
+};
 
-export default MainNavbar
+export default MainNavbar;
