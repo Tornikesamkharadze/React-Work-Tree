@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaBars, FaTwitter } from "react-icons/fa";
 
 import { links, social } from "./data";
@@ -7,16 +7,23 @@ import logo from "./logo.svg";
 import "./index.css";
 
 const MainNavbar = () => {
+  const [showLinks, setShowLinks] = useState(false);
+
+  const toggleBurgerManu = () => setShowLinks(!showLinks);
   return (
     <nav>
       <div className="nav-center">
         <div className="nav-header">
           <img src={logo} alt="logo" />
-          <button className="nav-toggle">
+          <button className="nav-toggle" onClick={toggleBurgerManu}>
             <FaBars />
           </button>
         </div>
-        <div className="links-container show-container">
+        <div
+          className={`${
+            showLinks ? "links-container show-container" : "links-container"
+          }`}
+        >
           <ul className="links">
             {links.map((link) => {
               const { id, url, text } = link;
@@ -32,8 +39,10 @@ const MainNavbar = () => {
           {social.map((link) => {
             const { id, url, icon } = link;
             return (
-              <li>
-                <a href={url} target="_blank">{icon}</a>
+              <li key={id}>
+                <a href={url} target="_blank">
+                  {icon}
+                </a>
               </li>
             );
           })}
