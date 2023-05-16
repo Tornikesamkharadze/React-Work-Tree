@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 const data = [
   { id: 1, name: "tornike" },
@@ -7,6 +7,7 @@ const data = [
   { id: 4, name: "nika" },
 ];
 
+const PersonContext = React.createContext();
 const ContextApi = () => {
   const [people, setPeople] = useState(data);
 
@@ -16,30 +17,25 @@ const ContextApi = () => {
     });
   };
   return (
-    <section>
+    <PersonContext.Provider value={{ removePerson }}>
       <h3>Prop Drilling</h3>
-      <List people={people} removePerson={removePerson} />
-    </section>
+      <List people={people} />
+    </PersonContext.Provider>
   );
 };
 
-const List = ({ people, removePerson }) => {
+const List = ({ people }) => {
   return (
     <>
       {people.map((person) => {
-        return (
-          <SinglePerson
-            key={person.id}
-            {...person}
-            removePerson={removePerson}
-          />
-        );
+        return <SinglePerson key={person.id} {...person} />;
       })}
     </>
   );
 };
 
-const SinglePerson = ({ id, name, removePerson }) => {
+const SinglePerson = ({ id, name }) => {
+    const {removePerson } = useContext(PersonContext)
   return (
     <div>
       <h1>{name}</h1>
