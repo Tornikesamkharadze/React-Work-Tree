@@ -14,6 +14,12 @@ const reducer = (state, action) => {
   if (action.type === "NO_VALUE") {
     return { ...state, isModalOpen: true, modalContent: "please enter text" };
   }
+  if (action.type === "REMOVE_ITEM") {
+    const removedItem = state.people.filter(
+      (item) => item.id !== action.payload
+    );
+    return { ...state, people: removedItem };
+  }
   if (action.type === "CLOSE_MODAL") {
     return { ...state, isModalOpen: false };
   }
@@ -62,7 +68,18 @@ const MinUseReducer = () => {
         <button type="submit">add</button>
       </form>
       {state.people.map((person) => {
-        return <div key={person.id}>{person.name}</div>;
+        return (
+          <React.Fragment key={person.id}>
+            <div>{person.name}</div>
+            <button
+              onClick={() =>
+                dispatch({ type: "REMOVE_ITEM", payload: person.id })
+              }
+            >
+              remove item
+            </button>
+          </React.Fragment>
+        );
       })}
     </>
   );
