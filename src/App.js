@@ -16,6 +16,7 @@ import MainColorGenerator from "./Projects/ColorGenerator/MainColorGenerator";
 import MainGrocery from "./Projects/Grocery-Bud/MainGrocery";
 import MainUseRef from "./workTree/UseRef/MainUseRef";
 import MainNavbar from "./Projects/Navbar/MainNavbar";
+import MainUseReducer from "./workTree/useReducer/mainUseReducer";
 function App() {
   return (
     <>
@@ -34,7 +35,8 @@ function App() {
       {/* <MainColorGenerator /> */}
       {/*  <MainGrocery /> */}
       {/* <MainUseRef /> */}
-      <MainNavbar />
+      {/* <MainNavbar /> */}
+      <MainUseReducer />
     </>
   );
 }

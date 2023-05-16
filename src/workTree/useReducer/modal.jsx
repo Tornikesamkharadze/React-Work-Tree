@@ -6,4 +6,4 @@ const Modal = () => {
   )
 }
 
-export default modal
+export default Modal
