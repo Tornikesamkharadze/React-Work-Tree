@@ -18,6 +18,7 @@ import MainUseRef from "./workTree/UseRef/MainUseRef";
 import MainNavbar from "./Projects/Navbar/MainNavbar";
 import MainUseReducer from "./workTree/useReducer/mainUseReducer";
 import PropDrilling from "./workTree/Prop-Drilling/PropDrilling";
+import ContextApi from "./workTree/UseContext/Context";
 function App() {
   return (
     <>
@@ -38,7 +39,8 @@ function App() {
       {/* <MainUseRef /> */}
       {/* <MainNavbar /> */}
       {/* <MainUseReducer /> */}
-      <PropDrilling />
+      {/* <PropDrilling /> */}
+      <ContextApi />
     </>
   );
 }
