@@ -17,6 +17,7 @@ import MainGrocery from "./Projects/Grocery-Bud/MainGrocery";
 import MainUseRef from "./workTree/UseRef/MainUseRef";
 import MainNavbar from "./Projects/Navbar/MainNavbar";
 import MainUseReducer from "./workTree/useReducer/mainUseReducer";
+import PropDrilling from "./workTree/Prop-Drilling/PropDrilling";
 function App() {
   return (
     <>
@@ -36,7 +37,8 @@ function App() {
       {/*  <MainGrocery /> */}
       {/* <MainUseRef /> */}
       {/* <MainNavbar /> */}
-      <MainUseReducer />
+      {/* <MainUseReducer /> */}
+      <PropDrilling />
     </>
   );
 }
