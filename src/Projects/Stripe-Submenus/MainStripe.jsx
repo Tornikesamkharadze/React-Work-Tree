@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
+import Hero from "./Hero";
+import Submenu from "./Submenu";
 
 const MainStripe = () => {
   return (
-    <div>MainStripe</div>
-  )
-}
+    <>
+      <Navbar />
+      <Sidebar />
+      <Hero />
+      <Submenu />
+    </>
+  );
+};
 
-export default MainStripe
+export default MainStripe;
