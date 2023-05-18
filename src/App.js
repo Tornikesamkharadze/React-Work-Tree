@@ -20,6 +20,7 @@ import MainUseReducer from "./workTree/useReducer/mainUseReducer";
 import PropDrilling from "./workTree/Prop-Drilling/PropDrilling";
 import ContextApi from "./workTree/UseContext/Context";
 import MainSidebar from "./Projects/Sidebar-Modal/MainSidebar";
+import MainStripe from "./Projects/Stripe-Submenus/MainStripe";
 function App() {
   return (
     <>
@@ -43,6 +44,7 @@ function App() {
       {/* <PropDrilling /> */}
       {/*  <ContextApi /> */}
       {/* <MainSidebar /> */}
+      <MainStripe />
     </>
   );
 }
