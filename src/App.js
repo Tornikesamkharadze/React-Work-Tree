@@ -42,7 +42,7 @@ function App() {
       {/* <MainUseReducer /> */}
       {/* <PropDrilling /> */}
       {/*  <ContextApi /> */}
-      <MainSidebar />
+      {/* <MainSidebar /> */}
     </>
   );
 }
