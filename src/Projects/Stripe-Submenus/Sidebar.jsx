@@ -6,7 +6,7 @@ import { useAppContext } from "./context";
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useAppContext();
   return (
-    <sidebar
+    <aside
       className={`${
         isSidebarOpen ? "sidebar-wrapper show" : "sidebar-wrapper"
       }`}
@@ -37,7 +37,7 @@ const Sidebar = () => {
           })}
         </div>
       </div>
-    </sidebar>
+    </aside>
   );
 };
 
