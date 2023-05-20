@@ -5,7 +5,7 @@ import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const { openSidebar, openSubmenu, closeSubmenu } = useAppContext();
-  
+
   const displaySubmenu = (e) => {
     const page = e.target.textContent;
     const tempBtn = e.target.getBoundingClientRect();
@@ -14,8 +14,14 @@ const Navbar = () => {
     openSubmenu(page, { center, bottom });
   };
 
+  const handleSubmenu = (e) => {
+    if (!e.target.classList.contains("link-btn")) {
+      closeSubmenu();
+    }
+  };
+
   return (
-    <nav className="nav">
+    <nav className="nav" onMouseOver={handleSubmenu}>
       <div className="nav-center">
         <div className="nav-header">
           <img src={logo} alt="logo" className="nav-logo" />
@@ -40,9 +46,7 @@ const Navbar = () => {
             </button>
           </li>
         </ul>
-        <button className="btn signin-btn">
-          sign in
-        </button>
+        <button className="btn signin-btn">sign in</button>
       </div>
     </nav>
   );
