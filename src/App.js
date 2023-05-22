@@ -21,7 +21,7 @@ import PropDrilling from "./workTree/Prop-Drilling/PropDrilling";
 import ContextApi from "./workTree/UseContext/Context";
 import MainSidebar from "./Projects/Sidebar-Modal/MainSidebar";
 import MainStripe from "./Projects/Stripe-Submenus/MainStripe";
-import MainCart from "./Projects/Cart/MainCart";
+import CartIndex from "./Projects/Cart/CartIndex";
 function App() {
   return (
     <>
@@ -46,7 +46,7 @@ function App() {
       {/*  <ContextApi /> */}
       {/* <MainSidebar /> */}
       {/* <MainStripe /> */}
-      <MainCart />
+      <CartIndex />
     </>
   );
 }
