@@ -1,9 +1,7 @@
-import React from 'react'
-const url = "https://course-api.com/javascript-store-products";
-const Custome = () => {
-  return (
-    <div>Custome</div>
-  )
-}
+import React from "react";
 
-export default Custome
+const useFetch = () => {
+  return <div>useFetch</div>;
+};
+
+export default useFetch;
