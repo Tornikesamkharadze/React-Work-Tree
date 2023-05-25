@@ -22,6 +22,7 @@ import ContextApi from "./workTree/UseContext/Context";
 import MainSidebar from "./Projects/Sidebar-Modal/MainSidebar";
 import MainStripe from "./Projects/Stripe-Submenus/MainStripe";
 import CartIndex from "./Projects/Cart/CartIndex";
+import Custome from "./workTree/Custom-hooks/useFetch";
 function App() {
   return (
     <>
@@ -46,7 +47,7 @@ function App() {
       {/*  <ContextApi /> */}
       {/* <MainSidebar /> */}
       {/* <MainStripe /> */}
-      <CartIndex />
+      <Custome />
     </>
   );
 }
