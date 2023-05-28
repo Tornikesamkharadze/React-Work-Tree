@@ -23,6 +23,7 @@ import MainSidebar from "./Projects/Sidebar-Modal/MainSidebar";
 import MainStripe from "./Projects/Stripe-Submenus/MainStripe";
 import CartIndex from "./Projects/Cart/CartIndex";
 import Custom from "./workTree/Custom-hooks/Custom";
+import Index from "./workTree/Prop-types";
 function App() {
   return (
     <>
@@ -47,7 +48,7 @@ function App() {
       {/*  <ContextApi /> */}
       {/* <MainSidebar /> */}
       {/* <MainStripe /> */}
-      <Custom />
+      <Index />
     </>
   );
 }
