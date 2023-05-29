@@ -6,7 +6,8 @@ import useFetch from "../Custom-hooks/useFetch";
 const url = "https://course-api.com/javascript-store-products";
 
 // every time props or state changes, component re-renders
-/* const expensive = (data) => {
+
+const expensive = (data) => {
   return (
     data.reduce((total, item) => {
       const price = item.fields.price;
@@ -17,7 +18,7 @@ const url = "https://course-api.com/javascript-store-products";
     }, 0) / 100
   );
 };
- */
+
 const Index = () => {
   const { products } = useFetch(url);
   const [count, setCount] = useState(0);
@@ -25,6 +26,8 @@ const Index = () => {
 
   const addToCart = useCallback(() => setCart(cart + 1), [cart]);
 
+  const mostExpensive = useMemo(() => expensive(products), [products]);
+  
   return (
     <>
       <h1>Count : {count}</h1>
@@ -32,7 +35,7 @@ const Index = () => {
         click me
       </button>
       <h1 style={{ marginTop: "3rem" }}>Cart: {cart}</h1>
-      <h1>Most expensive: </h1>
+      <h1>Most expensive: ${mostExpensive}</h1>
       <BigList products={products} addToCart={addToCart} />
     </>
   );
