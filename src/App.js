@@ -23,7 +23,7 @@ import MainSidebar from "./Projects/Sidebar-Modal/MainSidebar";
 import MainStripe from "./Projects/Stripe-Submenus/MainStripe";
 import CartIndex from "./Projects/Cart/CartIndex";
 import Custom from "./workTree/Custom-hooks/Custom";
-import Index from "./workTree/Prop-types";
+import Index from "./workTree/memo-useMemo-useCallback/index";
 function App() {
   return (
     <>
