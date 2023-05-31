@@ -1,7 +1,16 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
+
 const MainApp = () => {
-  return <div>React Router Dom</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<div>home page</div>} />
+        <Route path="testing" element={<div>testing</div>} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default MainApp;
