@@ -8,6 +8,7 @@ const MainApp = () => {
       <Routes>
         <Route path="/" element={<div>home page</div>} />
         <Route path="testing" element={<div>testing</div>} />
+        <Route path="about" element={<div>about</div>} />
       </Routes>
     </BrowserRouter>
   );
