@@ -9,7 +9,6 @@ import "./index.css";
 const MainApp = () => {
   return (
     <BrowserRouter>
-      <nav>navbar</nav>
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="about" element={<About />} />
@@ -17,7 +16,6 @@ const MainApp = () => {
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
-      <footer>footer</footer>
     </BrowserRouter>
   );
 };
