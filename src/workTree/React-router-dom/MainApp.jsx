@@ -5,12 +5,14 @@ import About from "./Pages/About";
 import Products from "./Pages/Products";
 import Error from "./Pages/Error";
 import "./index.css";
+import SharedLayout from "./Pages/SharedLayout";
 
 const MainApp = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="products" element={<Products />} />
           <Route path="*" element={<Error />} />
