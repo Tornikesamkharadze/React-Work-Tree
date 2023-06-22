@@ -18,5 +18,5 @@ const StyledNavbar = () => {
     </nav>
   );
 };
-/* 173 3*/
+/* 173 */
 export default StyledNavbar;
