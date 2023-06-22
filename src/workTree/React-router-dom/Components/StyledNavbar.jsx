@@ -19,4 +19,5 @@ const StyledNavbar = () => {
   );
 };
 /* 173 */
+1
 export default StyledNavbar;
