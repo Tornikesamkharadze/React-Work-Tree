@@ -15,6 +15,7 @@ const StyledNavbar = () => {
       </NavLink>
       <NavLink to="/about">about</NavLink>
       <NavLink to="/products">products</NavLink>
+      <NavLink to="/login">Login</NavLink>
     </nav>
   );
 };
