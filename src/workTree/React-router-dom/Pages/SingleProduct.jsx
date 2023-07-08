@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import { Link, useParams } from "react-router-dom";
 
 const SingleProduct = () => {
-  return (
-    <div>SingleProduct</div>
-  )
-}
+  const { productId } = useParams();
 
-export default SingleProduct
+  return (
+    <section className="section product">
+      <h4>{productId}</h4>
+      <div>SingleProduct</div>
+      <Link to="/products">Products</Link>
+    </section>
+  );
+};
+
+export default SingleProduct;
