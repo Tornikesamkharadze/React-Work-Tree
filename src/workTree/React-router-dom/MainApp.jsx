@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Products from "./Pages/Products";
 import Error from "./Pages/Error";
+import SingleProduct from "./Pages/SingleProduct";
 import "./index.css";
 import SharedLayout from "./Pages/SharedLayout";
 
@@ -15,6 +16,7 @@ const MainApp = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:productId" element={<SingleProduct />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
