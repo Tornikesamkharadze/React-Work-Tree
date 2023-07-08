@@ -7,6 +7,7 @@ import Error from "./Pages/Error";
 import SingleProduct from "./Pages/SingleProduct";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
+import ProtectedRoute from "./Pages/ProtectedRoute";
 import "./index.css";
 import SharedLayout from "./Pages/SharedLayout";
 
@@ -21,7 +22,14 @@ const MainApp = () => {
           <Route path="products" element={<Products />} />
           <Route path="products/:productId" element={<SingleProduct />} />
           <Route path="login" element={<Login setUser={setUser} />} />
-          <Route path="dashboard" element={<Dashboard user={user} />} />
+          <Route
+            path="dashboard"
+            element={
+              <ProtectedRoute user={user} >
+                <Dashboard user={user} />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
