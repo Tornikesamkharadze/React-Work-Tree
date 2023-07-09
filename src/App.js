@@ -25,6 +25,7 @@ import CartIndex from "./Projects/Cart/CartIndex";
 import Custom from "./workTree/Custom-hooks/Custom";
 import Index from "./workTree/memo-useMemo-useCallback/index";
 import MainApp from "./workTree/React-router-dom/MainApp";
+import AxiosApp from "./workTree/Axios/AxiosApp";
 function App() {
   return (
     <>
@@ -49,7 +50,7 @@ function App() {
       {/*  <ContextApi /> */}
       {/* <MainSidebar /> */}
       {/* <MainStripe /> */}
-      <MainApp />
+      <AxiosApp />
     </>
   );
 }
